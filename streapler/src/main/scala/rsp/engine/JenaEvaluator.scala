@@ -1,32 +1,19 @@
 package rsp.engine
 
-import com.hp.hpl.jena.sparql.algebra.{Op=>JenaOp}
-import com.hp.hpl.jena.graph.{Graph=>JenaGraph}
-import com.hp.hpl.jena.graph.{Triple=>JenaTriple}
-import com.hp.hpl.jena.sparql.engine.binding.{Binding=>JenaBinding}
-import com.hp.hpl.jena.sparql.algebra.Algebra
-import rsp.query.algebra.Op
-import com.hp.hpl.jena.sparql.algebra.op.OpBGP
-import rsp.query.algebra._
-import rsp.data._
-import com.hp.hpl.jena.graph.NodeFactory
-import com.hp.hpl.jena.graph.Node
-import rsp.query.algebra.TriplePattern
-import rsp.query.algebra.PatternTerm
-import rsp.query.algebra.Var
-import com.hp.hpl.jena.sparql.util.graph.GraphFactory
-import collection.JavaConversions._
-import org.slf4j.LoggerFactory
-import com.hp.hpl.jena.rdf.model.Model
-import com.hp.hpl.jena.rdf.model.ModelFactory
-import com.hp.hpl.jena.rdf.model.ResourceFactory
-import com.hp.hpl.jena.vocabulary.RDFS
-import com.hp.hpl.jena.sparql.core.{Var=>JenaVar}
-import com.hp.hpl.jena.rdf.model.{Literal=>JenaLit}
-import com.hp.hpl.jena.sparql.core.BasicPattern
-import com.hp.hpl.jena.sparql.algebra.op.OpFilter
-import com.hp.hpl.jena.sparql.expr.nodevalue._
+import com.hp.hpl.jena.graph.{Node, NodeFactory, Graph => JenaGraph, Triple => JenaTriple}
+import com.hp.hpl.jena.rdf.model.{Literal => JenaLit}
+import com.hp.hpl.jena.sparql.algebra.op.{OpBGP, OpFilter}
+import com.hp.hpl.jena.sparql.algebra.{Algebra, Op => JenaOp}
+import com.hp.hpl.jena.sparql.core.{BasicPattern, Var => JenaVar}
+import com.hp.hpl.jena.sparql.engine.binding.{Binding => JenaBinding}
 import com.hp.hpl.jena.sparql.expr._
+import com.hp.hpl.jena.sparql.expr.nodevalue._
+import com.hp.hpl.jena.sparql.util.graph.GraphFactory
+import org.slf4j.LoggerFactory
+import rsp.data._
+import rsp.query.algebra.{Op, PatternTerm, TriplePattern, Var, _}
+
+import scala.collection.JavaConversions._
 import scala.language.implicitConversions
 
 class JenaEvaluator(q:JenaOp) {

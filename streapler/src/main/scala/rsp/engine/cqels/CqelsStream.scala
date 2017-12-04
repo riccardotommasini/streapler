@@ -1,14 +1,11 @@
 package rsp.engine.cqels
 
-import java.util.UUID
-import scala.util.Random
-import scala.concurrent.duration._
 import akka.actor._
-import rsp.data.{Triple=>RspTriple}
-import rsp.vocab._
-import rsp.data.Iri
 import com.typesafe.config.Config
+import rsp.data.{Iri, Triple => RspTriple}
 import rsp.engine.RspReasoner
+
+import scala.concurrent.duration._
 import scala.language.postfixOps
 
 case object StartStream

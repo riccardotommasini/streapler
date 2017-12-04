@@ -47,11 +47,21 @@ class CqelsReasoner(ontologyFile:String) extends RspReasoner{
     }
     else Seq(q)
     regQueries=qt.size
-    qt.foreach{cqelsQuery=>
-      println(cqelsQuery)
-      val selQuery=engine.registerConstruct(cqelsQuery)    
-      selQuery.register(listener.listener.asInstanceOf[ConstructListener])      
+//    qt.foreach{cqelsQuery=>
+//      println(cqelsQuery)
+//      val selQuery=engine.registerConstruct(cqelsQuery)
+//      selQuery.register(listener.listener.asInstanceOf[ConstructListener])
+//    }
+
+    val qs = qt.map { q =>
+
+      println(q)
+      val rq = engine.registerConstruct(q)
+      rq.register(listener.listener.asInstanceOf[ConstructListener])
+      rq
+
     }
+    qs
   }
     
 

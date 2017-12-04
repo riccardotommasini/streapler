@@ -22,11 +22,12 @@ libraryDependencies ++= Seq(
 
 resolvers ++= Seq(
   "typesafe" at "http://repo.typesafe.com/typesafe/releases/",
-  "gsn" at "http://osper.epfl.ch:8081/artifactory/gsn-release",
+  DefaultMavenRepository,
+  "gsn" at "https://mvnrepository.com/artifact/ch.epfl.gsn",
   "plord" at "http://homepages.cs.ncl.ac.uk/phillip.lord/maven"
 )
 
-mainClass in Compile := Some("rsp.engine.cqels.Experiments")
+mainClass in Compile := Some("rsp.engine.rewriting.Experiments")
 
 scriptClasspath := Seq("*")
 
