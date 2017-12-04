@@ -20,3 +20,5 @@ datasets/
 .worksheet
 .classpath
 .project
+
+*.idea
